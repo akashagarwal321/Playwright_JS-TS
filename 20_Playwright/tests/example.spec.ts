@@ -29,10 +29,24 @@ import { test, expect } from '@playwright/test';
 // });
 
 
-test("Negative Test",async ({page})=>{
+// test("Negative Test",async ({page})=>{
 
-  await page.goto("https://www.google.com");
+//   await page.goto("https://www.google.com");
 
-  expect(page.title()).toBe(/Google/);
-  //await page.waitForTimeout(10000);
-});
+//   const title = await page.title();
+
+//   expect(title).toBe("Google");
+//   //await page.waitForTimeout(10000);
+  
+// })
+
+
+test("Verify Title of Google", async ({page})=>{
+
+await page.goto("https://google.com");
+
+await expect(page).toHaveTitle("Google - Test");
+
+})
+
+
