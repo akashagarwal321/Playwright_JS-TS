@@ -1,9 +1,9 @@
-import { chromium } from "@playwright/test";
+import { chromium,Browser,BrowserContext,Page } from "playwright";
   
   async function main():Promise<void>{
-  const browser = await chromium.launch({headless:false});
-  const context = await browser.newContext();
-  const page = await context.newPage();
+  const browser:Browser = await chromium.launch({headless:false});
+  const context:BrowserContext = await browser.newContext();
+  const page:Page = await context.newPage();
 
   await page.goto("https://www.linkedin.com");
 
